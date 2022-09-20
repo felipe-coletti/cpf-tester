@@ -32,10 +32,9 @@ def test(result_1=0, result_2=0):
     print(rest_2)
     print(cpf[10])
     if rest_1 == len(cpf) - 2 and rest_2 == len(cpf) - 1:
-        validation = True
+        return True
     else:
-        validation = False
-    return validation
+        return False
 
 
 # retirar todos os caracteres e/ou letras do número de CPF
