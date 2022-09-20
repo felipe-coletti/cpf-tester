@@ -15,8 +15,8 @@ def test(result_1=0, result_2=0):
     # achar o número de verificação
     print(result_1)
     print(result_2)
-    rest_1 = result_1 * 10 % 11
-    rest_2 = result_2 * 10 % 11
+    rest_1 = (result_1 * 10) % 11
+    rest_2 = (result_2 * 10) % 11
     print(rest_1)
     print(rest_2)
     # transformar num único digito, caso ainda não seja
@@ -31,7 +31,7 @@ def test(result_1=0, result_2=0):
     print(cpf[9])
     print(rest_2)
     print(cpf[10])
-    if rest_1 == len(cpf) - 2 and rest_2 == len(cpf) - 1:
+    if rest_1 == len(cpf) - 1 and rest_2 == len(cpf):
         return True
     else:
         return False
