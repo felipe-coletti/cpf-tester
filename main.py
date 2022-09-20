@@ -7,11 +7,11 @@ def test(result_1=0, result_2=0):
     # primeiro número * 10, segundo número * 9... Até o último número antes do traço
     for i in range(len(cpf)):
         number = len(cpf) - 1 - i
-        result_1 += int(cpf[i]) * number
+        result_1 += cpf[i] * number
     # primeiro número * 11, segundo número * 10... Até o penúltimo número
     for i in range(len(cpf)):
         number = len(cpf) - i
-        result_2 += int(cpf[i]) * number
+        result_2 += cpf[i] * number
     # ache o número de verificação
     rest_1 = result_1 * 10 // 11
     rest_2 = result_2 * 10 // 11
