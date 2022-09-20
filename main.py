@@ -31,7 +31,7 @@ def test(result_1=0, result_2=0):
     print(cpf[9])
     print(rest_2)
     print(cpf[10])
-    if rest_1 == cpf[9] and rest_2 == cpf[10]:
+    if rest_1 == len(cpf) - 2 and rest_2 == len(cpf) - 1:
         validation = True
     else:
         validation = False
