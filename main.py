@@ -1,33 +1,29 @@
-# cpf de exemplo
+# CPF de exemplo
 cpf = '123.456.789-10'
 
 
 # Criar a funcão que verifica o CPF
-def check(result=0, validation=False):
+def check(result_1=0, result_2=0):
     # primeiro número * 10, segundo número * 9... Até o último número antes do traço
     for i in range(len(cpf)):
-        n = len(cpf) - 1 - i
-        result += int(cpf[i]) * n
-    # achar o número de verificação
-    result = result * 10 // 11
-    # transformar num único digito, caso ainda não seja
-    if result == 10:
-        result = 0
-    # verificar se o penúltimo número está correto
-    if result == cpf[10]:
-        validation = True
-    result = 0
+        number = len(cpf) - 1 - i
+        result_1 += int(cpf[i]) * number
     # primeiro número * 11, segundo número * 10... Até o penúltimo número
     for i in range(len(cpf)):
-        n = len(cpf) - i
-        result += int(cpf[i]) * n
+        number = len(cpf) - i
+        result_2 += int(cpf[i]) * number
     # achar o número de verificação
-    result = result * 10 // 11
+    result_1 = result_1 * 10 // 11
+    result_2 = result_2 * 10 // 11
     # transformar num único digito, caso ainda não seja
-    if result == 10:
-        result = 0
-    # verificar se o último número não está correto para remover a validação, se for necessário
-    if result != cpf[11]:
+    if result_1 == 10:
+        result_1 = 0
+    if result_2 == 10:
+        result_2 = 0
+    # fazer a validação do CPF
+    if result_1 != cpf[10] and result_2 != cpf[11]:
+        validation = True
+    else:
         validation = False
     return validation
 
