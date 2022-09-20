@@ -1,5 +1,5 @@
 # cpf de exemplo
-cpf = "123.456.789-10"
+cpf = '123.456.789-10'
 
 
 # Criar a funcão que verifica o CPF
