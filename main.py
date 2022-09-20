@@ -1,15 +1,16 @@
-cpf = '12345678944'
+cpf = '12345678909'
 
 
 # Criar a funcão que verifica o CPF
 def test(result_1=0, result_2=0):
+    print(len(cpf))
     # primeiro número * 10, segundo número * 9... Até o último número antes do traço
     for i in range(len(cpf) - 2):
-        number = len(cpf) + 1 - i
+        number = len(cpf) - 1 - i
         result_1 += int(cpf[i]) * number
     # primeiro número * 11, segundo número * 10... Até o penúltimo número
     for i in range(len(cpf) - 1):
-        number = len(cpf) + 1 - i
+        number = len(cpf) - i
         result_2 += int(cpf[i]) * number
     # achar o número de verificação
     print(result_1)
@@ -27,10 +28,10 @@ def test(result_1=0, result_2=0):
     print(rest_2)
     # fazer a validação do CPF
     print(rest_1)
-    print(cpf[10])
+    print(cpf[9])
     print(rest_2)
     print(cpf[10])
-    if rest_1 == cpf[10] and rest_2 == cpf[11]:
+    if rest_1 == cpf[9] and rest_2 == cpf[10]:
         validation = True
     else:
         validation = False
