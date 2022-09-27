@@ -6,9 +6,11 @@ def test(result_1=0, result_2=0):
     for i in range(len(cpf) - 2):
         number = len(cpf) - 1 - i
         result_1 += int(cpf[i]) * number
+        print(i)
     for i in range(len(cpf) - 1):
         number = len(cpf) - i
         result_2 += int(cpf[i]) * number
+        print(i)
     print(result_1)
     print(result_2)
     rest_1 = (result_1 * 10) % 11
