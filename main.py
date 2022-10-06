@@ -38,7 +38,7 @@ def no_repeats(repeats=0):
 # remove letras e caracteres estranhos do CPF
 cpf = ''.join(i for i in cpf if i.isdigit())
 
-# exibi o resultado 
+# exibe o resultado 
 if test() and no_repeats():
     print('CPF válido.')
 else:
