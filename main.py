@@ -20,9 +20,19 @@ def test(result_1=0, result_2=0):
         return False
 
 
+def no_repeats(repeats=0):
+    for i in range(len(cpf)):
+        if cpf[i] == cpf[i - 1]:
+            repeats += 1
+    if repeats < 11:
+        return True
+    else:
+        return False
+
+
 cpf = ''.join(i for i in cpf if i.isdigit())
 
-if test():
+if test() and no_repeats():
     print('CPF válido.')
 else:
     print('CPF inválido.')
