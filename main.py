@@ -1,6 +1,40 @@
 # solicita o CPF do usuário
 cpf = input('CPF: ')
 
+# estado onde o CPF do usuário foi registrado
+state = 'São Paulo'
+
+# lista com o 9º dígito do CPF para cada estado
+states = {
+    'Rio Grande do Sul': 0,
+    'Distrito Federal': 1,
+    'Goiás': 1,
+    'Mato Grosso': 1,
+    'Mato Grosso do Sul': 1,
+    'Tocantins': 1,
+    'Amazonas': 2,
+    'Pará': 2,
+    'Roraima': 2,
+    'Amapá': 2,
+    'Acre': 2,
+    'Rondônia': 2,
+    'Ceará': 3,
+    'Maranhão': 3,
+    'Piauí': 3,
+    'Paraíba': 4,
+    'Pernambuco': 4,
+    'Alagoas': 4,
+    'Rio Grande do Norte': 4,
+    'Bahia': 5,
+    'Sergipe': 5,
+    'Minas Gerais': 6,
+    'Rio de Janeiro': 7,
+    'Espírito Santo': 7,
+    'São Paulo': 8,
+    'Paraná': 9,
+    'Santa Catarina': 9
+}
+
 
 # verifica se o CPF é válido
 def test(result_1=0, result_2=0):
@@ -38,8 +72,8 @@ def no_repeats(repeats=0):
 # remove letras e caracteres estranhos do CPF
 cpf = ''.join(i for i in cpf if i.isdigit())
 
-# exibe o resultado 
-if test() and no_repeats():
+# exibe o resultado
+if int(cpf[8]) == states[state] and test() and no_repeats():
     print('CPF válido.')
 else:
     print('CPF inválido.')
